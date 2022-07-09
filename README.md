@@ -63,6 +63,11 @@ git branch --contains sha
 ```
 
 ## Docker
+### Stop all containers
+```
+docker ps -aq | xargs docker stop
+```
+
 ### Check how much space is used by Docker
 ```
 docker system df
