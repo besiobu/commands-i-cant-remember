@@ -12,6 +12,19 @@ tar -czvf name-of-archive.tar.gz /path/to/dir
 tar -xvf name-of-archive.tar.gz -C /path/to/dir
 ```  
 
+### SSH without password
+Option 1:
+```
+ssh-keygen                 # Generate key
+ssh-copy-id -i user@host   # Add key to known_hosts on host
+ssh root@host              # SSH will not require password
+```
+
+Option 2:
+```
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user@host
+```
+
 ## Git
 ### Find "lost commits"
 ```
