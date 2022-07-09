@@ -98,3 +98,15 @@ ansible-playbook -i inventory playbooks/name_of_playbook.yml
 ```
 ansible-playbook -i "host," playbooks/run-name_of_playbook.yml
 ```
+
+## Python
+### Create venv with specificy Python version
+Option 1:
+```
+virtualenv .venv --python=python3.6
+```
+
+Option 2:
+```
+python3.6 -m venv .venv
+```
