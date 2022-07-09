@@ -77,3 +77,14 @@ docker image prune --all --force
 ```
 docker stats --no-stream
 ```
+
+## Ansible
+### Run playbook
+```
+ansible-playbook -i inventory playbooks/name_of_playbook.yml
+```
+
+### Run playbook on specific host
+```
+ansible-playbook -i "host," playbooks/run-name_of_playbook.yml
+```
