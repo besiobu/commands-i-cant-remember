@@ -48,3 +48,19 @@ pick sha1 title1
 ```
 git branch --contains sha 
 ```
+
+## Docker
+### Check how much space is used by Docker
+```
+docker system df
+```
+
+### Remove old images
+```
+docker image prune --all --force
+```
+
+### Check resource usage by container
+```
+docker stats --no-stream
+```
