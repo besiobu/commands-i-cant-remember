@@ -25,6 +25,11 @@ Option 2:
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user@host
 ```
 
+### Show service log for current boot
+```
+journalctl -u service_name.service -f -b
+```
+
 ## Git
 ### Find "lost commits"
 ```
