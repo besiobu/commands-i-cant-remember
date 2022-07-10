@@ -45,6 +45,24 @@ cat /dev/urandom | tr -dc '[:alpha:]' | fold -w ${1:-20} | head -n 1
 sha512sum /path/to/file
 ```
 
+### Binary copy of drive
+```
+dd bs=1M if=/dev/sdX of=/dev/sdY
+```
+
+### Erase drive
+Get the drive numbers from output of `df -h` or `lsblk`.
+
+Option 1 (zeros):
+```
+dd if=/dev/zero of=/dev/sdX bs=1M
+```
+
+Option 2 (random):
+```
+dd if=/dev/urandom of=/dev/sdX bs=1M
+```
+
 ## Git
 ### Find "lost commits"
 ```
