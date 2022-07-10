@@ -40,6 +40,11 @@ journalctl -u service_name.service -f -b
 cat /dev/urandom | tr -dc '[:alpha:]' | fold -w ${1:-20} | head -n 1
 ```
 
+### Check hash of file
+```
+sha512sum /path/to/file
+```
+
 ## Git
 ### Find "lost commits"
 ```
