@@ -63,6 +63,16 @@ Option 2 (random):
 dd if=/dev/urandom of=/dev/sdX bs=1M
 ```
 
+### Show memory usage by process
+```
+ps -eo pid,rss,cmd --sort -rss | head -10
+```
+
+### Show cpu usage by process
+```
+ps -eo pid,pcpu,cmd --sort -pcpu | head -10
+```
+
 ## Git
 ### Find "lost commits"
 ```
