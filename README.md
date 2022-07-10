@@ -153,3 +153,47 @@ Option 2:
 ```
 python3.6 -m venv .venv
 ```
+
+## Virtualization
+Basic vm operations:
+```
+virsh start vm
+virsh suspend vm   # vm consumes memory but not cpu
+virsh resume vm
+virsh reset vm     # immediate, risk of data loss
+virsh shutdown vm
+virsh destroy vm   # immediate shutown, add --graceful to flush cache to disk
+```
+
+### Check IP address assigned to vms by DHCP
+```
+virsh net-dhcp-leases net_name 
+```
+
+```
+virsh domifaddr vm0
+```
+
+### Networking
+Basic network operations
+```
+virsh net-destroy net_name # Stop network
+virsh net-edit net_name    # Edit settings
+virsh net-start net_name   # Start network
+```
+
+### Clone VM
+```
+virt-clone --original vm --name vm-clone --file /path/to/vm/image
+```
+
+### Create snapshot of VM
+Create: (requires qcow2)
+```
+virsh snapshot-create-as --domain vm --name "snapshot_name"
+```
+
+Revert:
+```
+virsh snapshot-revert vm snapshot_name
+```
