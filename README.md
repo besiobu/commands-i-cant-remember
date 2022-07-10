@@ -35,6 +35,11 @@ user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 journalctl -u service_name.service -f -b
 ```
 
+### Generate random string (20 characters, letters only)
+```
+cat /dev/urandom | tr -dc '[:alpha:]' | fold -w ${1:-20} | head -n 1
+```
+
 ## Git
 ### Find "lost commits"
 ```
