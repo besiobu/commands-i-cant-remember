@@ -25,6 +25,16 @@ Option 2:
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user@host
 ```
 
+### Add SSH  keep alive
+Add
+```
+Host *
+    TCPKeepAlive yes
+    ServerAliveInterval 30
+
+```
+to `~/.ssh/config`.
+
 ### Enable passwordles sudo
 ```
 user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
