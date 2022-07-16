@@ -37,7 +37,7 @@ to `~/.ssh/config`.
 
 ### Enable passwordles sudo
 ```
-user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 ```
 
 ### Show service log for current boot
