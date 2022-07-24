@@ -12,6 +12,14 @@ tar -czvf name-of-archive.tar.gz /path/to/dir
 tar -xvf name-of-archive.tar.gz -C /path/to/dir
 ```  
 
+### Copy files to and from remote machines
+To remote
+```
+```
+From remote
+```
+```
+
 ### SSH without password
 Option 1:
 ```
@@ -31,7 +39,6 @@ Add
 Host *
     TCPKeepAlive yes
     ServerAliveInterval 30
-
 ```
 to `~/.ssh/config`.
 
