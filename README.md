@@ -277,3 +277,21 @@ Revert:
 ```
 virsh snapshot-revert vm snapshot_name
 ```
+
+## Networking
+### Check if DNS resolves
+#### Option 1:
+```
+ping -c 1 google.com
+```
+
+#### Option 2:
+```
+dig +short google.com
+```
+
+#### Option 3:
+Check Google's DNS entry on Cloudflares DNS service.
+```
+nslookup google.com 1.1.1.1
+```
