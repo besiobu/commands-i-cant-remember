@@ -90,6 +90,36 @@ ps -eo pid,rss,cmd --sort -rss | head -10
 ps -eo pid,pcpu,cmd --sort -pcpu | head -10
 ```
 
+### Pin all threads to cpus
+Option 1:
+```
+cat /etc/default/grub
+```
+Add `isolcpus=0,1` to the lines with `GRUB_CMDLINE_LINUX=`.
+```
+update-grub && reboot
+```
+
+Option 2:
+```
+#!/bin/sh
+
+MASK="0,1"
+PIDS=$(ps -aux | awk -F ' ' '{print $2}')
+
+for pid in $PIDS
+do
+    echo "Setting mask for process ${pid}."
+    if taskset -cpa "${MASK}" "${pid}"
+    then
+        echo "Ok."
+    else
+        echo "Failed to set mask for ${pid}"
+        exit 1
+    fi
+done
+```
+
 ## Git
 ### Find "lost commits"
 ```
