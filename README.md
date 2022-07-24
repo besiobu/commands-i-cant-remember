@@ -295,3 +295,8 @@ Check Google's DNS entry on Cloudflares DNS service.
 ```
 nslookup google.com 1.1.1.1
 ```
+
+### List ports with pid's
+```
+sudo netstat -tulpn
+```
