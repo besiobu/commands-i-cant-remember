@@ -179,6 +179,39 @@ docker stats --no-stream
 ```
 
 ## Ansible
+
+### Basic inventory and config example
+```
+(.venv) dev@vm:~/ansible$ cat inventory 
+[all]
+vm0
+vm1
+vm2
+```
+
+```
+(.venv) dev@vm:~/ansible$ cat inventory 
+[defaults]
+INVENTORY = inventory
+```
+
+```
+dev@vm:~/ansible$ cat /etc/hosts
+...
+
+123.123.123.1	vm0
+123.123.123.2	vm1
+123.123.123.3	vm2
+123.123.123.4	vm3
+
+...
+```
+
+### Run ad hoc command as user
+```
+ansible example -m ping -u dev
+```
+
 ### Run playbook
 ```
 ansible-playbook -i inventory playbooks/name_of_playbook.yml
